@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    <!--Presistence Unit -->
+    <persistence-unit name="bpmPU">
+        <!--user package-->
+        <class>com.jmat.bpm.user.entity.CandidateStudent</class>
+        <class>com.jmat.bpm.user.entity.Lesson</class>
+    </persistence-unit>
+</persistence>
