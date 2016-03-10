@@ -1,7 +1,7 @@
 package com.jmat.bpm.ses.wrapper;
 
 
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jmat.bpm.ses.entity.PurchOrderHeader;
 import com.jmat.bpm.support.transfer.ArrayTransfer;
 
@@ -73,8 +73,8 @@ public class PurchOrderHeaderItemContentWrap {
 
     public PurchOrderHeaderItemContentWrap(PurchOrderHeader entity) {
         this.poID = entity.getPoID();
-        this.bpmPoNo=entity.getBpmPoNo();
-        this.sapPoNo=entity.getSapPoNo();
+        this.bpmPoNo = entity.getBpmPoNo();
+        this.sapPoNo = entity.getSapPoNo();
         this.prNo = entity.getPrNo();
         this.processId = entity.getProcessId();
         this.initiatorId = entity.getInitiatorId();
@@ -101,10 +101,12 @@ public class PurchOrderHeaderItemContentWrap {
         this.shippingInstructions = entity.getShippingInstructions();
     }
 
+    @JsonProperty("resource")
     public String getResource() {
         return resource;
     }
 
+    @JsonProperty("po_id")
     public UUID getPoID() {
         return poID;
     }
@@ -113,6 +115,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.poID = poID;
     }
 
+    @JsonProperty("bpm_po_no")
     public Integer getBpmPoNo() {
         return bpmPoNo;
     }
@@ -121,6 +124,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.bpmPoNo = bpmPoNo;
     }
 
+    @JsonProperty("sap_po_no")
     public String getSapPoNo() {
         return sapPoNo;
     }
@@ -129,6 +133,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.sapPoNo = sapPoNo;
     }
 
+    @JsonProperty("pr_no")
     public String getPrNo() {
         return prNo;
     }
@@ -137,6 +142,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.prNo = prNo;
     }
 
+    @JsonProperty("proccess_id")
     public String getProcessId() {
         return processId;
     }
@@ -145,6 +151,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.processId = processId;
     }
 
+    @JsonProperty("initiator_id")
     public String getInitiatorId() {
         return initiatorId;
     }
@@ -153,6 +160,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.initiatorId = initiatorId;
     }
 
+    @JsonProperty("doc_date")
     public Date getDocDate() {
         return docDate;
     }
@@ -161,6 +169,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.docDate = docDate;
     }
 
+    @JsonProperty("doc_type")
     public String getDocType() {
         return docType;
     }
@@ -169,6 +178,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.docType = docType;
     }
 
+    @JsonProperty("vendor")
     public String getVendor() {
         return vendor;
     }
@@ -177,6 +187,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.vendor = vendor;
     }
 
+    @JsonProperty("currency")
     public String getCurrency() {
         return currency;
     }
@@ -185,6 +196,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.currency = currency;
     }
 
+    @JsonProperty("company_code")
     public String getCompanyCode() {
         return companyCode;
     }
@@ -193,6 +205,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.companyCode = companyCode;
     }
 
+    @JsonProperty("purchasing_org")
     public String getPurchasingOrg() {
         return purchasingOrg;
     }
@@ -201,6 +214,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.purchasingOrg = purchasingOrg;
     }
 
+    @JsonProperty("purchasing_group")
     public String getPurchasingGroup() {
         return purchasingGroup;
     }
@@ -209,6 +223,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.purchasingGroup = purchasingGroup;
     }
 
+    @JsonProperty("validity_start")
     public Date getValidityStart() {
         return validityStart;
     }
@@ -217,6 +232,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.validityStart = validityStart;
     }
 
+    @JsonProperty("completion_date")
     public Date getCompletion_date() {
         return completion_date;
     }
@@ -225,6 +241,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.completion_date = completion_date;
     }
 
+    @JsonProperty("exchange_rate")
     public Double getExchange_rate() {
         return exchange_rate;
     }
@@ -233,6 +250,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.exchange_rate = exchange_rate;
     }
 
+    @JsonProperty("commencement_date")
     public Date getCommencementDate() {
         return commencementDate;
     }
@@ -241,6 +259,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.commencementDate = commencementDate;
     }
 
+    @JsonProperty("total_value")
     public Double getTotalValue() {
         return totalValue;
     }
@@ -249,6 +268,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.totalValue = totalValue;
     }
 
+    @JsonProperty("header_text")
     public String getHeaderText() {
         return headerText;
     }
@@ -257,6 +277,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.headerText = headerText;
     }
 
+    @JsonProperty("header_notes")
     public String getHeaderNotes() {
         return headerNotes;
     }
@@ -265,6 +286,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.headerNotes = headerNotes;
     }
 
+    @JsonProperty("scope_of_work")
     public String getScopeOfWork() {
         return scopeOfWork;
     }
@@ -273,6 +295,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.scopeOfWork = scopeOfWork;
     }
 
+    @JsonProperty("job_representative")
     public String getJobRepresentative() {
         return jobRepresentative;
     }
@@ -281,6 +304,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.jobRepresentative = jobRepresentative;
     }
 
+    @JsonProperty("vendor_representative")
     public String getVendorRepresentative() {
         return vendorRepresentative;
     }
@@ -289,6 +313,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.vendorRepresentative = vendorRepresentative;
     }
 
+    @JsonProperty("job_provide")
     public String getJobProvide() {
         return jobProvide;
     }
@@ -297,6 +322,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.jobProvide = jobProvide;
     }
 
+    @JsonProperty("special_cond_reimbursable")
     public String getSpecialCondReimbursable() {
         return specialCondReimbursable;
     }
@@ -305,6 +331,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.specialCondReimbursable = specialCondReimbursable;
     }
 
+    @JsonProperty("basis_compensations")
     public String getBasisCompensations() {
         return basisCompensations;
     }
@@ -313,6 +340,7 @@ public class PurchOrderHeaderItemContentWrap {
         this.basisCompensations = basisCompensations;
     }
 
+    @JsonProperty("shipping_instructions")
     public String getShippingInstructions() {
         return shippingInstructions;
     }
@@ -322,6 +350,7 @@ public class PurchOrderHeaderItemContentWrap {
 
     }
 
+    @JsonProperty("purch_order_item_content")
     public ArrayTransfer<PurchOrderItemContentWrap> getPurchOrderItemContentArr() {
         return purchOrderItemContentArr;
     }

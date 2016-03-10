@@ -1,6 +1,7 @@
 package com.jmat.bpm.ses.wrapper;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jmat.bpm.ses.entity.PurchOrderContent;
 
 import java.util.UUID;
@@ -10,7 +11,9 @@ import java.util.UUID;
  */
 public class PurchOrderContentWrap {
 
-    private final String resource="PurchOrderContentWrap";
+    private final String resource = "PurchOrderContentWrap";
+
+    private UUID id;
 
     private UUID poID;
 
@@ -43,9 +46,11 @@ public class PurchOrderContentWrap {
     private String glAccount;
 
     public PurchOrderContentWrap(PurchOrderContent entity) {
+
+        this.id = entity.getId();
         this.poID = entity.getPoID();
-        this.bpmPoNo=entity.getBpmPoNo();
-        this.sapPoNo=entity.getSapPoNo();
+        this.bpmPoNo = entity.getBpmPoNo();
+        this.sapPoNo = entity.getSapPoNo();
         this.prNo = entity.getPrNo();
         this.itemNo = entity.getItemNo();
         this.line_no = entity.getLine_no();
@@ -60,10 +65,21 @@ public class PurchOrderContentWrap {
         this.glAccount = entity.getGlAccount();
     }
 
+    @JsonProperty("resource")
     public String getResource() {
         return resource;
     }
 
+    @JsonProperty("id")
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    @JsonProperty("po_id")
     public UUID getPoID() {
         return poID;
     }
@@ -72,6 +88,7 @@ public class PurchOrderContentWrap {
         this.poID = poID;
     }
 
+    @JsonProperty("bpm_po_no")
     public Integer getBpmPoNo() {
         return bpmPoNo;
     }
@@ -80,6 +97,7 @@ public class PurchOrderContentWrap {
         this.bpmPoNo = bpmPoNo;
     }
 
+    @JsonProperty("sap_po_no")
     public String getSapPoNo() {
         return sapPoNo;
     }
@@ -88,6 +106,7 @@ public class PurchOrderContentWrap {
         this.sapPoNo = sapPoNo;
     }
 
+    @JsonProperty("pr_no")
     public String getPrNo() {
         return prNo;
     }
@@ -96,6 +115,7 @@ public class PurchOrderContentWrap {
         this.prNo = prNo;
     }
 
+    @JsonProperty("item_no")
     public String getItemNo() {
         return itemNo;
     }
@@ -104,6 +124,7 @@ public class PurchOrderContentWrap {
         this.itemNo = itemNo;
     }
 
+    @JsonProperty("line_no")
     public String getLine_no() {
         return line_no;
     }
@@ -112,6 +133,7 @@ public class PurchOrderContentWrap {
         this.line_no = line_no;
     }
 
+    @JsonProperty("gross_price")
     public Double getGrossPrice() {
         return grossPrice;
     }
@@ -120,6 +142,7 @@ public class PurchOrderContentWrap {
         this.grossPrice = grossPrice;
     }
 
+    @JsonProperty("activity_no")
     public String getActivityNo() {
         return activityNo;
     }
@@ -128,6 +151,7 @@ public class PurchOrderContentWrap {
         this.activityNo = activityNo;
     }
 
+    @JsonProperty("quantity")
     public Double getQuantity() {
         return quantity;
     }
@@ -136,6 +160,7 @@ public class PurchOrderContentWrap {
         this.quantity = quantity;
     }
 
+    @JsonProperty("uom")
     public String getUom() {
         return uom;
     }
@@ -144,6 +169,7 @@ public class PurchOrderContentWrap {
         this.uom = uom;
     }
 
+    @JsonProperty("percentage")
     public Double getPercentage() {
         return percentage;
     }
@@ -152,6 +178,7 @@ public class PurchOrderContentWrap {
         this.percentage = percentage;
     }
 
+    @JsonProperty("net_value")
     public Double getNetValue() {
         return netValue;
     }
@@ -160,6 +187,7 @@ public class PurchOrderContentWrap {
         this.netValue = netValue;
     }
 
+    @JsonProperty("cost_center")
     public String getCostCenter() {
         return costCenter;
     }
@@ -168,6 +196,7 @@ public class PurchOrderContentWrap {
         this.costCenter = costCenter;
     }
 
+    @JsonProperty("wbs")
     public String getWbs() {
         return wbs;
     }
@@ -176,6 +205,7 @@ public class PurchOrderContentWrap {
         this.wbs = wbs;
     }
 
+    @JsonProperty("gl_account")
     public String getGlAccount() {
         return glAccount;
     }

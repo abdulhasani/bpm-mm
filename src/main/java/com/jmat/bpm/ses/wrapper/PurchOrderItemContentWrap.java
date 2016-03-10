@@ -2,6 +2,7 @@ package com.jmat.bpm.ses.wrapper;
 
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jmat.bpm.ses.entity.PurchOrderItem;
 import com.jmat.bpm.support.transfer.ArrayTransfer;
 
@@ -80,6 +81,8 @@ public class PurchOrderItemContentWrap {
         return resource;
     }
 
+
+    @JsonProperty("po_id")
     public UUID getPoID() {
         return poID;
     }
@@ -88,6 +91,7 @@ public class PurchOrderItemContentWrap {
         this.poID = poID;
     }
 
+    @JsonProperty("bpm_po_no")
     public Integer getBpmPoNo() {
         return bpmPoNo;
     }
@@ -96,6 +100,7 @@ public class PurchOrderItemContentWrap {
         this.bpmPoNo = bpmPoNo;
     }
 
+    @JsonProperty("sap_po_no")
     public String getSapPoNo() {
         return sapPoNo;
     }
@@ -104,6 +109,7 @@ public class PurchOrderItemContentWrap {
         this.sapPoNo = sapPoNo;
     }
 
+    @JsonProperty("pr_no")
     public String getPrNo() {
         return prNo;
     }
@@ -112,6 +118,7 @@ public class PurchOrderItemContentWrap {
         this.prNo = prNo;
     }
 
+    @JsonProperty("po_no")
     public String getPoNo() {
         return poNo;
     }
@@ -120,6 +127,7 @@ public class PurchOrderItemContentWrap {
         this.poNo = poNo;
     }
 
+    @JsonProperty("item_no")
     public String getItemNo() {
         return itemNo;
     }
@@ -128,6 +136,7 @@ public class PurchOrderItemContentWrap {
         this.itemNo = itemNo;
     }
 
+    @JsonProperty("item_desc")
     public String getItemDesc() {
         return itemDesc;
     }
@@ -136,6 +145,7 @@ public class PurchOrderItemContentWrap {
         this.itemDesc = itemDesc;
     }
 
+    @JsonProperty("package_no")
     public String getPackageNo() {
         return packageNo;
     }
@@ -144,6 +154,7 @@ public class PurchOrderItemContentWrap {
         this.packageNo = packageNo;
     }
 
+    @JsonProperty("item_category")
     public String getItemCategory() {
         return itemCategory;
     }
@@ -152,6 +163,7 @@ public class PurchOrderItemContentWrap {
         this.itemCategory = itemCategory;
     }
 
+    @JsonProperty("material_no")
     public String getMaterialNo() {
         return materialNo;
     }
@@ -160,6 +172,7 @@ public class PurchOrderItemContentWrap {
         this.materialNo = materialNo;
     }
 
+    @JsonProperty("quantity")
     public Double getQuantity() {
         return quantity;
     }
@@ -168,6 +181,7 @@ public class PurchOrderItemContentWrap {
         this.quantity = quantity;
     }
 
+    @JsonProperty("uom")
     public String getUom() {
         return uom;
     }
@@ -176,6 +190,7 @@ public class PurchOrderItemContentWrap {
         this.uom = uom;
     }
 
+    @JsonProperty("currency")
     public String getCurrency() {
         return currency;
     }
@@ -184,6 +199,7 @@ public class PurchOrderItemContentWrap {
         this.currency = currency;
     }
 
+    @JsonProperty("net_price")
     public Double getNetPrice() {
         return netPrice;
     }
@@ -192,6 +208,7 @@ public class PurchOrderItemContentWrap {
         this.netPrice = netPrice;
     }
 
+    @JsonProperty("sub_total")
     public Double getSubtotal() {
         return subtotal;
     }
@@ -200,6 +217,7 @@ public class PurchOrderItemContentWrap {
         this.subtotal = subtotal;
     }
 
+    @JsonProperty("plant")
     public String getPlant() {
         return plant;
     }
@@ -208,6 +226,7 @@ public class PurchOrderItemContentWrap {
         this.plant = plant;
     }
 
+    @JsonProperty("account_assignment_cateory")
     public String getAccountAssignmentCategory() {
         return accountAssignmentCategory;
     }
@@ -216,6 +235,7 @@ public class PurchOrderItemContentWrap {
         this.accountAssignmentCategory = accountAssignmentCategory;
     }
 
+    @JsonProperty("distribution_type")
     public Integer getDistributionType() {
         return distributionType;
     }
@@ -224,6 +244,7 @@ public class PurchOrderItemContentWrap {
         this.distributionType = distributionType;
     }
 
+    @JsonProperty("delivery_date")
     public Date getDeliveryDate() {
         return deliveryDate;
     }
@@ -232,6 +253,7 @@ public class PurchOrderItemContentWrap {
         this.deliveryDate = deliveryDate;
     }
 
+    @JsonProperty("purch_order_content")
     public ArrayTransfer<PurchOrderContentWrap> getPurchOrderContentWrapList() {
         return purchOrderContentWrapList;
     }

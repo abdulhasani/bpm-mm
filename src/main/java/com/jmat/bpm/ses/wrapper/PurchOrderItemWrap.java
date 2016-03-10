@@ -1,7 +1,7 @@
 package com.jmat.bpm.ses.wrapper;
 
 
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jmat.bpm.ses.entity.PurchOrderItem;
 
 import java.util.Date;
@@ -12,7 +12,9 @@ import java.util.UUID;
  */
 public class PurchOrderItemWrap {
 
-    private final String resource="PurchOrderItemWrap";
+    private final String resource = "PurchOrderItemWrap";
+
+    private UUID id;
 
     private UUID poID;
 
@@ -53,9 +55,10 @@ public class PurchOrderItemWrap {
     private Date deliveryDate;
 
     public PurchOrderItemWrap(PurchOrderItem entity) {
+        this.id = entity.getId();
         this.poID = entity.getPoID();
-        this.bpmPoNo=entity.getBpmPoNo();
-        this.sapPoNo=entity.getSapPoNo();
+        this.bpmPoNo = entity.getBpmPoNo();
+        this.sapPoNo = entity.getSapPoNo();
         this.prNo = entity.getPrNo();
         this.poNo = entity.getPoNo();
         this.itemNo = entity.getItemNo();
@@ -74,10 +77,21 @@ public class PurchOrderItemWrap {
         this.deliveryDate = entity.getDeliveryDate();
     }
 
+    @JsonProperty("resources")
     public String getResource() {
         return resource;
     }
 
+    @JsonProperty("id")
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    @JsonProperty("po_id")
     public UUID getPoID() {
         return poID;
     }
@@ -86,6 +100,7 @@ public class PurchOrderItemWrap {
         this.poID = poID;
     }
 
+    @JsonProperty("bpm_po_no")
     public Integer getBpmPoNo() {
         return bpmPoNo;
     }
@@ -94,6 +109,7 @@ public class PurchOrderItemWrap {
         this.bpmPoNo = bpmPoNo;
     }
 
+    @JsonProperty("sap_po_no")
     public String getSapPoNo() {
         return sapPoNo;
     }
@@ -102,6 +118,7 @@ public class PurchOrderItemWrap {
         this.sapPoNo = sapPoNo;
     }
 
+    @JsonProperty("pr_no")
     public String getPrNo() {
         return prNo;
     }
@@ -110,6 +127,7 @@ public class PurchOrderItemWrap {
         this.prNo = prNo;
     }
 
+    @JsonProperty("po_no")
     public String getPoNo() {
         return poNo;
     }
@@ -118,6 +136,7 @@ public class PurchOrderItemWrap {
         this.poNo = poNo;
     }
 
+    @JsonProperty("item_no")
     public String getItemNo() {
         return itemNo;
     }
@@ -126,6 +145,7 @@ public class PurchOrderItemWrap {
         this.itemNo = itemNo;
     }
 
+    @JsonProperty("item_desc")
     public String getItemDesc() {
         return itemDesc;
     }
@@ -134,6 +154,7 @@ public class PurchOrderItemWrap {
         this.itemDesc = itemDesc;
     }
 
+    @JsonProperty("package_no")
     public String getPackageNo() {
         return packageNo;
     }
@@ -142,6 +163,7 @@ public class PurchOrderItemWrap {
         this.packageNo = packageNo;
     }
 
+    @JsonProperty("item_category")
     public String getItemCategory() {
         return itemCategory;
     }
@@ -150,6 +172,7 @@ public class PurchOrderItemWrap {
         this.itemCategory = itemCategory;
     }
 
+    @JsonProperty("material_no")
     public String getMaterialNo() {
         return materialNo;
     }
@@ -158,6 +181,7 @@ public class PurchOrderItemWrap {
         this.materialNo = materialNo;
     }
 
+    @JsonProperty("quantity")
     public Double getQuantity() {
         return quantity;
     }
@@ -166,6 +190,7 @@ public class PurchOrderItemWrap {
         this.quantity = quantity;
     }
 
+    @JsonProperty("uom")
     public String getUom() {
         return uom;
     }
@@ -174,6 +199,7 @@ public class PurchOrderItemWrap {
         this.uom = uom;
     }
 
+    @JsonProperty("currency")
     public String getCurrency() {
         return currency;
     }
@@ -182,6 +208,7 @@ public class PurchOrderItemWrap {
         this.currency = currency;
     }
 
+    @JsonProperty("net_price")
     public Double getNetPrice() {
         return netPrice;
     }
@@ -190,6 +217,7 @@ public class PurchOrderItemWrap {
         this.netPrice = netPrice;
     }
 
+    @JsonProperty("sub_total")
     public Double getSubtotal() {
         return subtotal;
     }
@@ -198,6 +226,7 @@ public class PurchOrderItemWrap {
         this.subtotal = subtotal;
     }
 
+    @JsonProperty("plant")
     public String getPlant() {
         return plant;
     }
@@ -206,6 +235,7 @@ public class PurchOrderItemWrap {
         this.plant = plant;
     }
 
+    @JsonProperty("account_assigment_category")
     public String getAccountAssignmentCategory() {
         return accountAssignmentCategory;
     }
@@ -214,6 +244,7 @@ public class PurchOrderItemWrap {
         this.accountAssignmentCategory = accountAssignmentCategory;
     }
 
+    @JsonProperty("distribution_type")
     public Integer getDistributionType() {
         return distributionType;
     }
@@ -222,6 +253,7 @@ public class PurchOrderItemWrap {
         this.distributionType = distributionType;
     }
 
+    @JsonProperty("delivery_date")
     public Date getDeliveryDate() {
         return deliveryDate;
     }

@@ -75,6 +75,7 @@ public class PurchOrderHeaderWrap {
     }
 
     public PurchOrderHeaderWrap(PurchOrderHeader entity) {
+        this.id=entity.getId();
         this.poID=entity.getPoID();
         this.bpmPoNo=entity.getBpmPoNo();
         this.sapPoNo=entity.getSapPoNo();
