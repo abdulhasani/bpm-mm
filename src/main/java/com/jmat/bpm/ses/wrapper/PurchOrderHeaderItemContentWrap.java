@@ -2,8 +2,8 @@ package com.jmat.bpm.ses.wrapper;
 
 
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jmat.bpm.ses.entity.PurchOrderHeader;
+import com.jmat.bpm.support.transfer.ArrayTransfer;
 
 import java.util.Date;
 import java.util.UUID;
@@ -11,11 +11,9 @@ import java.util.UUID;
 /**
  * Created by User on 1/19/2016.
  */
-public class PurchOrderHeaderWrap {
+public class PurchOrderHeaderItemContentWrap {
 
-    private final String resource="PurchOrderHeader";
-
-    private UUID id;
+    private final String resource = "PurchOrderHeaderItemContent";
 
     private UUID poID;
 
@@ -71,54 +69,42 @@ public class PurchOrderHeaderWrap {
 
     private String shippingInstructions;
 
-    public PurchOrderHeaderWrap() {
-    }
+    private ArrayTransfer<PurchOrderItemContentWrap> purchOrderItemContentArr;
 
-    public PurchOrderHeaderWrap(PurchOrderHeader entity) {
-        this.poID=entity.getPoID();
+    public PurchOrderHeaderItemContentWrap(PurchOrderHeader entity) {
+        this.poID = entity.getPoID();
         this.bpmPoNo=entity.getBpmPoNo();
         this.sapPoNo=entity.getSapPoNo();
-        this.prNo=entity.getPrNo();
-        this.processId=entity.getProcessId();
-        this.initiatorId=entity.getInitiatorId();
-        this.docDate=entity.getDocDate();
-        this.docType=entity.getDocType();
-        this.vendor=entity.getVendor();
-        this.currency=entity.getCurrency();
-        this.companyCode=entity.getCompanyCode();
-        this.purchasingOrg=entity.getPurchasingOrg();
-        this.purchasingGroup=entity.getPurchasingGroup();
-        this.validityStart=entity.getValidityStart();
-        this.completion_date=entity.getCompletion_date();
-        this.exchange_rate=entity.getExchange_rate();
-        this.commencementDate=entity.getCommencementDate();
-        this.totalValue=entity.getTotalValue();
-        this.headerText=entity.getHeaderText();
-        this.headerNotes=entity.getHeaderNotes();
-        this.scopeOfWork=entity.getScopeOfWork();
-        this.jobRepresentative=entity.getJobRepresentative();
-        this.vendorRepresentative=entity.getVendorRepresentative();
-        this.jobProvide=entity.getJobProvide();
-        this.specialCondReimbursable=entity.getSpecialCondReimbursable();
-        this.basisCompensations=entity.getBasisCompensations();
-        this.shippingInstructions=entity.getShippingInstructions();
+        this.prNo = entity.getPrNo();
+        this.processId = entity.getProcessId();
+        this.initiatorId = entity.getInitiatorId();
+        this.docDate = entity.getDocDate();
+        this.docType = entity.getDocType();
+        this.vendor = entity.getVendor();
+        this.currency = entity.getCurrency();
+        this.companyCode = entity.getCompanyCode();
+        this.purchasingOrg = entity.getPurchasingOrg();
+        this.purchasingGroup = entity.getPurchasingGroup();
+        this.validityStart = entity.getValidityStart();
+        this.completion_date = entity.getCompletion_date();
+        this.exchange_rate = entity.getExchange_rate();
+        this.commencementDate = entity.getCommencementDate();
+        this.totalValue = entity.getTotalValue();
+        this.headerText = entity.getHeaderText();
+        this.headerNotes = entity.getHeaderNotes();
+        this.scopeOfWork = entity.getScopeOfWork();
+        this.jobRepresentative = entity.getJobRepresentative();
+        this.vendorRepresentative = entity.getVendorRepresentative();
+        this.jobProvide = entity.getJobProvide();
+        this.specialCondReimbursable = entity.getSpecialCondReimbursable();
+        this.basisCompensations = entity.getBasisCompensations();
+        this.shippingInstructions = entity.getShippingInstructions();
     }
 
-    @JsonProperty("resource")
     public String getResource() {
         return resource;
     }
 
-    @JsonProperty("id")
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    @JsonProperty("po_id")
     public UUID getPoID() {
         return poID;
     }
@@ -127,7 +113,6 @@ public class PurchOrderHeaderWrap {
         this.poID = poID;
     }
 
-    @JsonProperty("bpm_po_no")
     public Integer getBpmPoNo() {
         return bpmPoNo;
     }
@@ -136,7 +121,6 @@ public class PurchOrderHeaderWrap {
         this.bpmPoNo = bpmPoNo;
     }
 
-    @JsonProperty("sap_po_no")
     public String getSapPoNo() {
         return sapPoNo;
     }
@@ -145,7 +129,6 @@ public class PurchOrderHeaderWrap {
         this.sapPoNo = sapPoNo;
     }
 
-    @JsonProperty("pr_no")
     public String getPrNo() {
         return prNo;
     }
@@ -154,7 +137,6 @@ public class PurchOrderHeaderWrap {
         this.prNo = prNo;
     }
 
-    @JsonProperty("process_id")
     public String getProcessId() {
         return processId;
     }
@@ -163,7 +145,6 @@ public class PurchOrderHeaderWrap {
         this.processId = processId;
     }
 
-    @JsonProperty("initiator_id")
     public String getInitiatorId() {
         return initiatorId;
     }
@@ -172,7 +153,6 @@ public class PurchOrderHeaderWrap {
         this.initiatorId = initiatorId;
     }
 
-    @JsonProperty("doc_date")
     public Date getDocDate() {
         return docDate;
     }
@@ -181,7 +161,6 @@ public class PurchOrderHeaderWrap {
         this.docDate = docDate;
     }
 
-    @JsonProperty("doc_type")
     public String getDocType() {
         return docType;
     }
@@ -190,7 +169,6 @@ public class PurchOrderHeaderWrap {
         this.docType = docType;
     }
 
-    @JsonProperty("vendor")
     public String getVendor() {
         return vendor;
     }
@@ -199,7 +177,6 @@ public class PurchOrderHeaderWrap {
         this.vendor = vendor;
     }
 
-    @JsonProperty("currency")
     public String getCurrency() {
         return currency;
     }
@@ -208,7 +185,6 @@ public class PurchOrderHeaderWrap {
         this.currency = currency;
     }
 
-    @JsonProperty("company_code")
     public String getCompanyCode() {
         return companyCode;
     }
@@ -217,7 +193,6 @@ public class PurchOrderHeaderWrap {
         this.companyCode = companyCode;
     }
 
-    @JsonProperty("purchasing_org")
     public String getPurchasingOrg() {
         return purchasingOrg;
     }
@@ -226,7 +201,6 @@ public class PurchOrderHeaderWrap {
         this.purchasingOrg = purchasingOrg;
     }
 
-    @JsonProperty("purchasing_group")
     public String getPurchasingGroup() {
         return purchasingGroup;
     }
@@ -235,7 +209,6 @@ public class PurchOrderHeaderWrap {
         this.purchasingGroup = purchasingGroup;
     }
 
-    @JsonProperty("validity_start")
     public Date getValidityStart() {
         return validityStart;
     }
@@ -244,7 +217,6 @@ public class PurchOrderHeaderWrap {
         this.validityStart = validityStart;
     }
 
-    @JsonProperty("completion_date")
     public Date getCompletion_date() {
         return completion_date;
     }
@@ -253,7 +225,6 @@ public class PurchOrderHeaderWrap {
         this.completion_date = completion_date;
     }
 
-    @JsonProperty("exchange_rate")
     public Double getExchange_rate() {
         return exchange_rate;
     }
@@ -262,7 +233,6 @@ public class PurchOrderHeaderWrap {
         this.exchange_rate = exchange_rate;
     }
 
-    @JsonProperty("commencement_date")
     public Date getCommencementDate() {
         return commencementDate;
     }
@@ -271,7 +241,6 @@ public class PurchOrderHeaderWrap {
         this.commencementDate = commencementDate;
     }
 
-    @JsonProperty("total_value")
     public Double getTotalValue() {
         return totalValue;
     }
@@ -280,7 +249,6 @@ public class PurchOrderHeaderWrap {
         this.totalValue = totalValue;
     }
 
-    @JsonProperty("header_text")
     public String getHeaderText() {
         return headerText;
     }
@@ -289,7 +257,6 @@ public class PurchOrderHeaderWrap {
         this.headerText = headerText;
     }
 
-    @JsonProperty("header_notes")
     public String getHeaderNotes() {
         return headerNotes;
     }
@@ -298,7 +265,6 @@ public class PurchOrderHeaderWrap {
         this.headerNotes = headerNotes;
     }
 
-    @JsonProperty("scope_of_work")
     public String getScopeOfWork() {
         return scopeOfWork;
     }
@@ -307,7 +273,6 @@ public class PurchOrderHeaderWrap {
         this.scopeOfWork = scopeOfWork;
     }
 
-    @JsonProperty("job_representative")
     public String getJobRepresentative() {
         return jobRepresentative;
     }
@@ -316,7 +281,6 @@ public class PurchOrderHeaderWrap {
         this.jobRepresentative = jobRepresentative;
     }
 
-    @JsonProperty("vendor_representative")
     public String getVendorRepresentative() {
         return vendorRepresentative;
     }
@@ -325,7 +289,6 @@ public class PurchOrderHeaderWrap {
         this.vendorRepresentative = vendorRepresentative;
     }
 
-    @JsonProperty("job_provide")
     public String getJobProvide() {
         return jobProvide;
     }
@@ -334,7 +297,6 @@ public class PurchOrderHeaderWrap {
         this.jobProvide = jobProvide;
     }
 
-    @JsonProperty("special_con_reimbursable")
     public String getSpecialCondReimbursable() {
         return specialCondReimbursable;
     }
@@ -343,7 +305,6 @@ public class PurchOrderHeaderWrap {
         this.specialCondReimbursable = specialCondReimbursable;
     }
 
-    @JsonProperty("basic_compensations")
     public String getBasisCompensations() {
         return basisCompensations;
     }
@@ -352,12 +313,21 @@ public class PurchOrderHeaderWrap {
         this.basisCompensations = basisCompensations;
     }
 
-    @JsonProperty("shipping_instructions")
     public String getShippingInstructions() {
         return shippingInstructions;
     }
 
     public void setShippingInstructions(String shippingInstructions) {
         this.shippingInstructions = shippingInstructions;
+
     }
+
+    public ArrayTransfer<PurchOrderItemContentWrap> getPurchOrderItemContentArr() {
+        return purchOrderItemContentArr;
+    }
+
+    public void setPurchOrderItemContentArr(ArrayTransfer<PurchOrderItemContentWrap> purchOrderItemContentArr) {
+        this.purchOrderItemContentArr = purchOrderItemContentArr;
+    }
+
 }

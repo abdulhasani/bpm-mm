@@ -12,7 +12,10 @@
     <mvc:annotation-driven />
     <context:component-scan base-package="com.jmat.bpm.user.entity,
                                           com.jmat.bpm.user.rest.resource,
-                                          com.jmat.bpm.user.service"/>
+                                          com.jmat.bpm.user.service,
+                                          com.jmat.bpm.ses.entity,
+                                          com.jmat.bpm.ses.rest.resource,
+                                          com.jmat.bpm.ses.service"/>
 
     <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
 
@@ -22,7 +25,8 @@
     <!--Database setup -->
     <import resource="context-db.xml"/>
     <!-- Scan and load SpringData repositories -->
-    <jpa:repositories base-package="com.jmat.bpm.user.repository,
+    <jpa:repositories base-package="com.jmat.bpm.ses.repository,
+                                    com.jmat.bpm.user.repository,
                                     com.jmat.bpm.support.repository,
                                     com.jmat.bpm.user.repository.impl"
                       entity-manager-factory-ref="bpmEntityManagerFactory"
